@@ -1,0 +1,17 @@
+{
+    "type": "postgres",
+    "host":"localhost",
+    "port": 5432,
+    "username":"postgres",
+    "password": "5av100404",
+    "database": "loading_ps",
+    "entities": [
+          "./src/models/*.ts"
+      ],
+    "migrations":[
+      "./src/database/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./src/database/migrations"
+    }
+  }
