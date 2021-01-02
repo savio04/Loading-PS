@@ -13,7 +13,7 @@ interface Request{
 }
 
 class CreateUsersService{
-  public async  excute({name,cellphone,email,password}:Request){
+  public async  excute({name,cellphone,email,password,profile}:Request){
     const userRepository = getRepository(User)
 
     const findEmailExisting = await  userRepository.findOne({
@@ -30,7 +30,8 @@ class CreateUsersService{
       name,
       cellphone,
       email,
-      password: passwordHash
+      password: passwordHash,
+      profile
     })
 
     await userRepository.save(user)

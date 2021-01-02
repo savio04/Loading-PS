@@ -30,6 +30,14 @@ class CreateProcedureService{
     
     return procedure
   }
+
+  public seeAll(){
+    const proceduresRepository = getRepository(Procedures)
+
+    const procedures = proceduresRepository.find()
+
+    return procedures
+  }
 }
 
 export default CreateProcedureService

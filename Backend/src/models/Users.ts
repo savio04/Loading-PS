@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm'
+import Requests from './Requests'
 
 @Entity('users')
 class User{
@@ -17,6 +18,9 @@ cellphone:string
 
 @Column()
 password:string
+
+@Column()
+profile:string
 
 @CreateDateColumn()
 created_at:Date

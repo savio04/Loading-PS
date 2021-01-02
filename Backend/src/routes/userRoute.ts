@@ -10,7 +10,8 @@ signupRoute.post('/', async (request,response) => {
         name,
         email,
         cellphone,
-        password
+        password,
+        profile
     })
 
     delete user.password
