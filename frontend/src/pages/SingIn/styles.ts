@@ -1,39 +1,34 @@
 import styled from 'styled-components'
-import backImage from '../../assets/Backgroundsignup.png'
 import { shade } from 'polished'
-
+import backSingIn from '../../assets/backSignIn.png'
 
 export const Container = styled.div`
-  display: flex;
   height: 100vh;
-  background: #E5E5E5;
-  align-items: stretch;
+  background: #9466FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Content = styled.div`
+  width: 60%;
+  background: url(${backSingIn}) #E5E5E5 no-repeat 80%;
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  //place-content: center; é a mesma coisa que justify-content e align-items
-  width: 100%;
-  max-width: 700px;
+  border-radius: 20px;
 
   form{
     width: 320px;
-    text-align: center;
-
-    p{
-      color: red;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
+    margin-top: 30px;
+    margin-bottom: 40px;
 
     h1{
-      margin-bottom: 24px;
+      text-align: center;
+      margin-bottom: 20px;
     }
-    
     button{
       width: 100%;
       height: 60px;
@@ -51,10 +46,10 @@ export const Content = styled.div`
     }
   }
 
-  > a{
+  a{
     color: #312E38;
     display: block;
-    margin-top: 40px;
+    margin-bottom: 40px;
     text-decoration: none;
     transition: color 0.2s;
 
@@ -65,13 +60,12 @@ export const Content = styled.div`
       color: ${shade(0.2, '#312E38')}
     }
     svg{
-      margin-left: 16px;
+      margin-right: 16px;
     }
   }
-`;
 
-export const Background = styled.div`
-  flex: 1;
-  background: url(${backImage}) center;
-  background-size: cover;
+  @media(max-width: 1200px){
+    width: 90%;
+    background: #E5E5E5;
+  }
 `;

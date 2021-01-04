@@ -25,8 +25,6 @@ function Dashboard(){
   return(
     <span>
       <Container>
-
-      
         <h1>Procedimentos disponiveis</h1>
         
         <div>
