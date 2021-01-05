@@ -5,8 +5,8 @@ import procedureRoute from './procedureRoute'
 import requestsRoute from './requestRoute'
 const Routes = Router()
 
-Routes.use('/signUp', signupRoute)
-Routes.use('/signIn', authRoute)
+Routes.use('/signup', signupRoute)
+Routes.use('/signin', authRoute)
 Routes.use('/procedure', procedureRoute)
 Routes.use('/requests', requestsRoute)
 

@@ -35,7 +35,7 @@ class CreateAuthService{
             expiresIn: Auth.expiresIn
         })
       
-        return {FindUser,token}
+        return {user: FindUser,token}
     }
 }
 export default CreateAuthService

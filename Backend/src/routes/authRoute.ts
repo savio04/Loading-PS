@@ -6,15 +6,15 @@ authRoute.post('/', async (request,response) => {
     const { email, password} = request.body
     const authService = new CreateAuthService
 
-    const {FindUser,token} = await authService.excute({
+    const {user,token} = await authService.excute({
         email,
         password
     })
 
-    delete FindUser.password
+    delete user.password
 
     response.json({
-        FindUser,
+        user,
         token
     })
 })

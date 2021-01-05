@@ -31,10 +31,10 @@ class CreateProcedureService{
     return procedure
   }
 
-  public seeAll(){
+  public async seeAll(){
     const proceduresRepository = getRepository(Procedures)
 
-    const procedures = proceduresRepository.find()
+    const procedures = await proceduresRepository.find()
 
     return procedures
   }
