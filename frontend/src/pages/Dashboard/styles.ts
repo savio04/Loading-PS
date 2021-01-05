@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { shade } from 'polished'
+
 
 export const Container = styled.div`
   
@@ -18,10 +18,10 @@ export const Container = styled.div`
   }
 
   div{
-    max-width: 800px;
+    max-width: 900px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   @media(max-width: 500px){

@@ -3,14 +3,22 @@ import { Div } from './styles'
 import { FiPlusCircle } from 'react-icons/fi'
 
 interface ProcedureProps{
-  onModal():void
+  name:string
+  avatar:string
+  description:string
 }
 
-const Procedures: React.FC<ProcedureProps> = ({onModal}) => {
+const Procedures: React.FC<ProcedureProps> = ({avatar,name,description,...rest}) => {
   return (
-    <Div onClick = {onModal}>
-      <img src="https://steamuserimages-a.akamaihd.net/ugc/1660105145368023702/9273ED97D9C5DC2AD93CAB1429221E2481740F43/" alt="perfil"/>
-      <p>nome do procedimento</p>
+    <Div {...rest} >
+      <div>
+        <img src={avatar} alt="avatar"/>
+        <h2> {name} </h2>
+      </div>
+      <p> {description} </p>
+      <button>
+        Adicionar ao carrinho
+      </button>
     </Div>
   )
 }

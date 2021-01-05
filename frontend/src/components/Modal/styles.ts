@@ -1,12 +1,13 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
 
 export const Container = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
   z-index:10;
-  width:100%;
-  height: 100%;
+  width:100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.7);
   display: flex;
   justify-content: center;

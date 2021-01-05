@@ -1,36 +1,34 @@
-import React, { useState } from 'react'
+import React, { FormEvent, useContext, useState } from 'react'
 import { Content, Container, Background } from './styles'
 import { FiMail, FiLock, FiLogIn } from 'react-icons/fi'
 import Input from '../../components/Input'
-import api from '../../service/api'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext'
 
-const SignUp: React.FC = () => {
 
-  const [hasError,setHasError] = useState(false)
+const SignIn: React.FC = () => {
+
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
+  const Authcontext = useContext(AuthContext)
+  const { signInContext,user,isError } = Authcontext
 
-  function handleError(){
-    setHasError(true)
-  }
-
-  async function handleDate(){
-    const response = await api.post('/signUp',{
+  console.log(user)
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault()
+    await signInContext({
       email,
       password
     })
-
-    console.log(response.data)
   }
 
   return (
     <Container>
       <Content>
-        <form action = '' >
+        <form onSubmit = {handleSubmit}  method = "post" >
           <h1>Fazer Login</h1>
 
-          {hasError && <p>Email ou senha ivalidos</p>}
+          {isError && <p>Email ou senha ivalidos</p>}
 
           <Input 
             name = 'email' 
@@ -48,11 +46,11 @@ const SignUp: React.FC = () => {
             onChange = {(event) => setPassword(event.target.value)}
           />
 
-          <button onClick = {handleDate} type = 'button' >Enviar</button>
+          <button type = 'submit' >Enviar</button>
 
         </form>
 
-        <Link to="/singIn">
+        <Link to="/signIn">
           Cadastrar-se
           <FiLogIn size = {20} />
         </Link>
@@ -63,4 +61,4 @@ const SignUp: React.FC = () => {
   )
 } 
 
-export default SignUp
+export default SignIn

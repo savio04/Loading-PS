@@ -1,15 +1,20 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import SingUp from '../pages/SignUp'
-import SingIn from '../pages/SingIn'
+import { BrowserRouter, Switch } from 'react-router-dom'
+import SingIn from '../pages/SignIn'
+import SingUp from '../pages/SingUp'
+import Dashboard from '../pages/Dashboard'
+import {Router} from './Router'
+import ConfirmedRegistrtion from '../pages/ConfirmedRegistration'
 
 
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path = '/' component = {SingUp} exact/>
-        <Route path = '/singIn' component = {SingIn} />
+      <Switch >
+        <Router path = '/' component = {SingIn} exact/>
+        <Router path = '/signIn' component = {SingUp} exact/>
+        <Router path = '/created' component = {ConfirmedRegistrtion} />
+        <Router path = '/dashboard' component = {Dashboard} isProvider/>
       </Switch>
     </BrowserRouter>
   )
