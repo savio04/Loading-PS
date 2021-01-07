@@ -15,6 +15,9 @@ description:string
 @Column()
 avatar:string
 
+@Column()
+value:number
+
 @CreateDateColumn()
 created_at:string
 

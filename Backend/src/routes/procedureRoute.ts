@@ -11,22 +11,21 @@ procedureRoute.get('/', async (request,response) => {
 
     const procedures = await procedureService.seeAll()
 
-    return response.json(procedures)
+    return response.status(200).json(procedures)
 })
 
 procedureRoute.post('/',IsAdmin, async (request,response) => {
-    const { name,description,avatar } = request.body
+    const { name,description,avatar, value} = request.body
     const procedureService = new CreateProcedureService
 
     const procedure = await procedureService.excute({
         name,
         description,
-        avatar
+        avatar,
+        value
     })
 
-    return response.status(201).json({
-        procedure
-    })
+    return response.status(201).json(procedure)
 })
 
 export default procedureRoute

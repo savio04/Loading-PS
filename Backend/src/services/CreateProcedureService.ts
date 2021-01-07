@@ -6,10 +6,11 @@ interface Request{
   name:string
   description:string
   avatar:string
+  value:number
 }
 
 class CreateProcedureService{
-  public async  excute({name,description,avatar}:Request){
+  public async  excute({value,name,description,avatar}:Request){
     const proceduresRepository = getRepository(Procedures)
 
     const FindProcedure = await proceduresRepository.findOne({
@@ -23,7 +24,8 @@ class CreateProcedureService{
     const procedure = proceduresRepository.create({
         name,
         description,
-        avatar
+        avatar,
+        value
     })
 
     await proceduresRepository.save(procedure)
