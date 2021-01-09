@@ -7,18 +7,18 @@ Algumas telas da aplicação estão dispostas a seguir.
 
 ### Tela de Login
 
-![](frontend/src/assets/Tela-Login.png?w=400)
+![](frontend/src/assets/Tela-Login.png?w=320)
 
 ### Tela de Cadastro
 
-![](frontend/src/assets/Tela-Cadastro.png?w=400)
+![](frontend/src/assets/Tela-Cadastro.png?w=320)
 
 ### Tela do Usuário
 
-![](frontend/src/assets/Tela-do-User.png?w=400)
+![](frontend/src/assets/Tela-do-User.png?w=320)
 
 ### Tela do prestador de serviço
 
-![](frontend/src/assets/Tela-do-Jaylon.png?w=400)
+![](frontend/src/assets/Tela-do-Jaylon.png?w=320)
 
 
