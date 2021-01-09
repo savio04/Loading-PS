@@ -1,6 +1,6 @@
 # Loading-PS
 
-Projeto realizado para o processo seletivo da _Loading_
+Projeto realizado para o processo seletivo da _Loading_.
 
 Algumas telas da aplicação estão dispostas a seguir.
 
