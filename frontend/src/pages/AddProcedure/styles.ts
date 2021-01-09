@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { shade } from 'polished'
-import backSingIn from '../../assets/backSignIn.png'
 
 export const Container = styled.div`
   height: 100vh;
@@ -12,8 +11,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 60%;
-  background: url(${backSingIn}) #E5E5E5 no-repeat 80%;
+  width: 50%;
+  background: #E5E5E5 ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +48,17 @@ export const Content = styled.div`
       &:hover{
         background-color: ${shade(0.2, '#9466FF')}
       }
+    }
+    textarea{
+      background-color: ${shade(0.1, '#E5E5E5')};
+      border-radius: 15px;
+      padding: 10px;
+      height: 120px;
+      width: 100%;
+      border: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #312E38;
     }
   }
 

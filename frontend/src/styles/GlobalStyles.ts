@@ -14,7 +14,7 @@ export default createGlobalStyle`
     -webkit-font-smoothiing: antialiazed;
   }
 
-  body,input {
+  body,input,textarea {
     font-size: 16px;
     font-family: sans-serif;
   }

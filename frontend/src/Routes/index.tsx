@@ -5,6 +5,7 @@ import SingUp from '../pages/SingUp'
 import Dashboard from '../pages/Dashboard'
 import {Router} from './Router'
 import ConfirmedRegistrtion from '../pages/ConfirmedRegistration'
+import AddProcedure from '../pages/AddProcedure'
 
 
 const Routes: React.FC = () => {
@@ -15,6 +16,7 @@ const Routes: React.FC = () => {
         <Router path = '/signIn' component = {SingUp} exact/>
         <Router path = '/created' component = {ConfirmedRegistrtion} />
         <Router path = '/dashboard' component = {Dashboard} isProvider/>
+        <Router path = '/addProcedures' component = {AddProcedure} isProvider/>
       </Switch>
     </BrowserRouter>
   )

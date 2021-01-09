@@ -8,14 +8,22 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  h1{
-    margin-top: 60px;
-    margin-bottom: 60px;
-    font-size: 45px;
-    padding: 4px;
-    border-bottom: 2px solid #312E38;
-    color: #312E38;
+  header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    h1{
+      margin-top: 60px;
+      margin-bottom: 60px;
+      font-size: 45px;
+      padding: 4px;
+      border-bottom: 2px solid #312E38;
+      color: #312E38;
+    }
   }
+
 
   div{
     max-width: 900px;
@@ -41,6 +49,7 @@ export const ButtonCart = styled.div`
   height: 54px;
   background: #FFF;
   border-radius:  10px 0 0 10px ;
+  display: flex;
 
   button{
     border: none;
@@ -85,5 +94,27 @@ export const ButtonCart = styled.div`
         transform: none;
       }
     }
+  }
+`;
+
+export const ButtonLogOut = styled.button`
+  position:absolute;
+  right: 30px;
+  top: 25px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #312E38;
+  transition: transform 0.2s;
+
+
+  &:hover{
+    transform: translateX(5px);
+  }
+  svg{
+    margin-left: 6px;
   }
 `;

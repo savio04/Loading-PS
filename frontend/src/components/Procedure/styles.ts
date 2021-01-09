@@ -24,14 +24,27 @@ export const Div = styled.div`
     h2{
       margin-left: 15px;
     }
-
   }
 
   p{
     text-align: justify;
   }
+`;
 
-  button{
+export const Footer = styled.footer`
+   width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    span{
+      display:flex;
+      p{
+        color: #9466FF;
+        margin-left: 8px;
+      }
+    }
+    button{
       display: flex;
       align-items: center;
       background-color: #9466FF;

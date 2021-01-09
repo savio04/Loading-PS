@@ -11,21 +11,23 @@ const SingUp: React.FC = () => {
   const [email,setEmail] = useState('')
   const [cellphone,setCellphone] = useState('')
   const [password,setPassword] = useState('')
+  const [hasError,setHasError] = useState(false)
   const hystory = useHistory()
 
   const handleSubmit = async(e:FormEvent) => {
     e.preventDefault()
     try{
-      const user = await api.post('/signup', {
+      await api.post('/signup', {
         name,
         email,
         cellphone,
         password
       })
-      console.log(user)
+      setHasError(false)
       hystory.push('/created')
     }catch(err){
       console.log(err)
+      setHasError(true)
     }
 
   }
@@ -35,7 +37,7 @@ const SingUp: React.FC = () => {
      <Content>
       <form onSubmit ={handleSubmit}>
           <h1>Faça seu cadastro</h1>
-
+          {hasError && <p>Email ja existente</p>}
           <Input 
             name = 'name' 
             placeholder = 'Nome' 

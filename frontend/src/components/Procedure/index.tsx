@@ -1,14 +1,20 @@
-import React from 'react'
-import { Div } from './styles'
-import { FiPlusCircle } from 'react-icons/fi'
+import React, {useContext} from 'react'
+import { Div, Footer } from './styles'
+import { AuthContext } from '../../context/AuthContext'
 
 interface ProcedureProps{
+  id:string
   name:string
   avatar:string
   description:string
+  value: number
 }
 
-const Procedures: React.FC<ProcedureProps> = ({avatar,name,description,...rest}) => {
+const Procedures: React.FC<ProcedureProps> = ({id,value,avatar,name,description,...rest}) => {
+
+  const authContext = useContext(AuthContext)
+  const { Cart } = authContext
+
   return (
     <Div {...rest} >
       <div>
@@ -16,9 +22,21 @@ const Procedures: React.FC<ProcedureProps> = ({avatar,name,description,...rest})
         <h2> {name} </h2>
       </div>
       <p> {description} </p>
-      <button>
-        Adicionar ao carrinho
-      </button>
+      
+      <Footer>
+        <span>
+          Valor:
+          <p> EU€ {value} </p>
+        </span>
+        <button onClick = {() => Cart({
+          name,
+          id,
+          avatar,
+          value,
+        })} >
+          Adicionar ao carrinho
+        </button>
+      </Footer>
     </Div>
   )
 }
