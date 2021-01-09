@@ -22,6 +22,9 @@ password:string
 @Column()
 profile:string
 
+@OneToMany(() => Requests, requests => requests.user)
+requests:Requests
+
 @CreateDateColumn()
 created_at:Date
 

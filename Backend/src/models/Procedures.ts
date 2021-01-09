@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm'
+import Requests from './Requests';
+
 
 @Entity('procedures')
 class Procedure{
@@ -17,6 +19,9 @@ avatar:string
 
 @Column()
 value:number
+
+@OneToMany(() => Requests, requests => requests.procedure)
+requests:Requests
 
 @CreateDateColumn()
 created_at:string

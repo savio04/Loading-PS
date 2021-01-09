@@ -22,6 +22,7 @@ export class createRequests1609584301121 implements MigrationInterface {
                         name: 'user_id',
                         type: 'uuid'
                     },
+                    
                     {
                         name: 'created_at',
                         type: 'timestamp',
@@ -48,12 +49,22 @@ export class createRequests1609584301121 implements MigrationInterface {
             })
         )
 
-
+        await queryRunner.createForeignKey('requests',
+            new TableForeignKey({
+                name: 'keyProcedure',
+                columnNames: ['procedure_id'],
+                referencedColumnNames: ['id'],
+                referencedTableName : 'procedures',
+                onDelete: 'SET NULL',
+                onUpdate: 'CASCADE'
+            })
+        )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('requests')
         await queryRunner.dropForeignKey('requests','KeyUsers')
+        await queryRunner.dropForeignKey('requests','keyProcedure')
     }
 
 }

@@ -9,21 +9,21 @@ requestsRoute.use(ensureAutheticate)
 requestsRoute.get('/',IsAdmin,async (request,response) => {
     const RequestService = new CreateRequestService
 
-    const requestProcedures = await RequestService.seeAll()
+    const requestsData = await RequestService.seeAll()
 
-    return response.json(requestProcedures)
+    return response.json(requestsData)
 })
 
 requestsRoute.post('/', async (request,response) => {
     const {procedure_id} = request.body
     const RequestService = new CreateRequestService
 
-    const requestUser = await RequestService.execute({
+    const requestData = await RequestService.execute({
         user_id:request.user.id,
-        procedure_id
+        procedure_id,
     })
 
-    return response.json(requestUser)
+    return response.json(requestData)
 
 })
 

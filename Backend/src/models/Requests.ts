@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm'
+import Procedure from './Procedures'
 
 import User from './Users'
 
@@ -14,9 +15,13 @@ user_id:string
 @Column()
 procedure_id:string
 
-@ManyToOne(() => User)
+@ManyToOne(() => User, user => user.requests, {eager : true})
 @JoinColumn({name: 'user_id'})
 user: User
+
+@ManyToOne(() => Procedure, procedure => procedure.requests, {eager:true})
+@JoinColumn({name: 'procedure_id'})
+procedure:Procedure
 
 @CreateDateColumn()
 created_at:string
